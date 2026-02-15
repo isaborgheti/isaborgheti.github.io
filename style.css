@@ -1,0 +1,174 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #95494b;
+  color: #fff6ed;
+  font-family: "Lora", sans-serif;
+  line-height: 1.6;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.narrow {
+  max-width: 720px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* HERO */
+.hero {
+  padding: 100px 0 60px 0;
+}
+
+.hero-grid {
+  display: flex;
+  flex-direction: column; /* Empilha um abaixo do outro */
+  align-items: center; /* Centraliza horizontalmente */
+  text-align: center;
+  gap: 40px; /* Espaço entre os elementos */
+}
+
+.hero-text,
+.hero-image,
+.hero-cta {
+  grid-area: auto;
+  width: 100%;
+}
+
+.hero-text h1 {
+  font-family: "Le Jour Serif", serif;
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+/*.hero-image {
+  grid-area: image;
+  text-align: right;
+}*/
+
+.hero-image img {
+  width: 100%;
+  max-width: 350px;
+
+  /* Faz a imagem ser um quadrado perfeito */
+  aspect-ratio: 1 / 1;
+
+  /* Garante que a foto preencha o círculo sem distorcer */
+  object-fit: cover;
+
+  /* Transforma em círculo */
+  border-radius: 50%;
+
+  /* Removi a borda e mantive apenas uma sombra suave para profundidade */
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-cta {
+  margin-top: 10px;
+}
+
+/* BOTÃO */
+.btn {
+  display: inline-block;
+  background-color: #fff6ed;
+  color: #95494b;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 15px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #e2d5c8; /* Ajustado: o verde antigo (#162e21) contrastava muito com sua paleta */
+  transform: translateY(-1px);
+}
+
+/* SEÇÕES */
+.section {
+  padding: 80px 0;
+}
+
+.section h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.paragraph {
+  margin-bottom: 22px;
+  color: #fff6ed;
+  font-size: 16px;
+}
+
+/* CTA FINAL */
+.final-cta {
+  padding: 100px 0;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .hero-grid {
+    /* Mudamos de Grid para Flex para facilitar a centralização total */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-text,
+  .hero-image,
+  .hero-cta {
+    grid-area: auto; /* Anula as áreas da grid antiga */
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-image img {
+    margin: 0 auto;
+    display: block; /* Garante que a margem auto funcione */
+    max-width: 300px; /* Reduzi um pouco para tablets para não ocupar a tela toda */
+  }
+
+  .hero-text h1 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 0;
+  }
+
+  .final-cta {
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  /* .hero {
+    padding: 60px 0 40px 0;
+  } */
+
+  .hero-text h1 {
+    font-size: 34px;
+  }
+}
